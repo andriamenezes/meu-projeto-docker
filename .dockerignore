@@ -1,0 +1,10 @@
+node_modules
+Dockerfile
+node_modules
+.git
+.github
+docs
+*.md
+.env
+todo.db
+npm-debug.log
