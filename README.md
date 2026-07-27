@@ -1,4 +1,4 @@
-# Atividade Docker + CI — Welder Barroso de Melo
+# Atividade Docker + CI — Geandria de Menezes Pereira
 
 > Preencha todos os campos marcados com `[...]` e substitua os prints de exemplo pelos seus. Salve as imagens em `docs/imagens/` e mantenha os nomes de arquivo indicados.
 
