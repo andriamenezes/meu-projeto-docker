@@ -215,16 +215,16 @@ Na hora de "Esperar a aplicação responder" em actions deu bug, falhando no ste
 
 **1. O que é o Docker Hub, na sua visão?**
 
-> (escreva sua resposta aqui)
+> É como um "GitHub", mas para imagens Docker em vez de código. É onde eu guardo a imagem já pronta da minha aplicação, e qualquer pessoa (ou qualquer servidor) pode baixar essa imagem com o comando `docker pull` e rodar ela sem precisar ter o código-fonte nem montar nada do zero.
 
 **2. Qual a diferença entre o CI (atividade anterior) e o CD (esta)?**
 
-> (escreva sua resposta aqui)
+> O CI é a parte que testa se o meu código está funcionando: toda vez que eu dou push, o GitHub sobe a aplicação, testa se ela responde e se o CRUD funciona. O CD é o próximo passo: depois que os testes passam, ele constrói a imagem final e já publica ela no Docker Hub automaticamente, sem eu precisar fazer isso na mão. Ou seja, o CI garante que o código está certo, e o CD entrega o resultado pronto para quem for usar.
 
 **3. Por que usamos um token e Secrets em vez de escrever o usuário e a senha no arquivo `cd.yml`?**
 
-> (escreva sua resposta aqui)
+> Porque o `cd.yml` fica dentro do repositório, e se o repositório é público, qualquer pessoa consegue ler esse arquivo. Se eu colocasse minha senha ali, todo mundo teria acesso à minha conta inteira do Docker Hub. Usando Secrets, o valor fica guardado de forma escondida dentro do GitHub, e o token é melhor que a senha porque ele só dá permissão para publicar imagens, e eu posso revogar ele quando quiser sem precisar trocar a senha da minha conta.
 
 **4. O que significa a tag `latest` no endereço da imagem?**
 
-> (escreva sua resposta aqui)
+> `latest` é o nome dado para a versão mais recente da imagem que eu publiquei. Toda vez que eu faço push para a `main`, o CD constrói uma imagem nova e ela substitui a que estava marcada como `latest`. Então quando alguém roda `docker pull usuario/imagem:latest`, sempre vai baixar a versão mais atual que eu publiquei, e não uma versão antiga fixa.
