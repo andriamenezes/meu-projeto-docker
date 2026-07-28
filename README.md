@@ -4,10 +4,11 @@
 
 **Aluno(a):** Geandria de Menezes Pereira
 **Turma:** Noturno
-**Data:** 27/07/2026 
+**Data:** 27/07/2026
 **Aplicação usada:** docker/getting-started-app — To-Do em Node.js
 
 **Sobre o app:**
+
 - Runtime: Node.js 18+
 - Início: `node src/index.js`
 - Porta interna: `3000`
@@ -29,6 +30,7 @@ docker compose up -d --build
 **Acesse:** http://localhost:3000
 
 **Para derrubar:**
+
 - `docker compose down` (mantém dados)
 - `docker compose down -v` (apaga dados)
 
@@ -44,7 +46,7 @@ docker compose up -d --build
 
 **Tamanho final da imagem:** 67.9MB
 
-**Por que o multi-stage ajuda?** 
+**Por que o multi-stage ajuda?**
 
 Dockerfile com dois estágios: `builder` (instala apenas dependências de produção com `npm ci --omit=dev`) e o estágio final, que copia seletivamente `node_modules`, `package.json` e `src` do builder — sem devDependencies e sem os arquivos de teste. Ao copiar só os artefatos necessários para o estágio final, a imagem não carrega ferramentas de build nem devDependencies, ficando menor e com menos superfície de ataque.
 
@@ -102,7 +104,7 @@ Porque o Docker possui um DNS interno que resolve automaticamente o nome do cont
 
 ![Docker network inspect](docs/imagens/05-network-inspect.png)
 
-### Print 6 — dados dentro do MySQL (select * from todo_items;)
+### Print 6 — dados dentro do MySQL (select \* from todo_items;)
 
 `select * from todo_items;` dentro do MySQL:
 
@@ -160,11 +162,11 @@ Porque o Docker possui um DNS interno que resolve automaticamente o nome do cont
 
 **O que eu quebrei:** colocado caminho errado no .env
 
-**Erro que apareceu no log:** 
+**Erro que apareceu no log:**
 
 Error: Process completed with exit code 1.
 
-**Como o CI reagiu:** 
+**Como o CI reagiu:**
 
 Na hora de "Esperar a aplicação responder" em actions deu bug, falhando no step de validação da aplicação.
 
@@ -184,8 +186,7 @@ Na hora de "Esperar a aplicação responder" em actions deu bug, falhando no ste
 
 ## 8. Dificuldades e aprendizados
 
-Complexo o passo a passo, senti mais dificuldade com linux do que com o docker, aprendizagem leve e intuitiva. Aos poucos vamos memorizando e revendo os comandos, entendendo os conceitos, como um quebra cabeças, uma hora encaixa.
----
+## Complexo o passo a passo, senti mais dificuldade com linux do que com o docker, aprendizagem leve e intuitiva. Aos poucos vamos memorizando e revendo os comandos, entendendo os conceitos, como um quebra cabeças, uma hora encaixa.
 
 ## 9. Checklist de autoavaliação
 
@@ -208,18 +209,22 @@ Complexo o passo a passo, senti mais dificuldade com linux do que com o docker, 
 ![Imagem publicada no Docker Hub](docs/imagens/13-dockerhub-imagem.png)
 ![docker pull da imagem publicada](docs/imagens/14-docker-pull.png)
 
-**Imagem publicada:** `SEU_USUARIO/meu-projeto-docker:latest`
+**Imagem publicada:** `andriamenezes/meu-projeto-docker:latest`
 
 ### Perguntas
 
 **1. O que é o Docker Hub, na sua visão?**
+
 > (escreva sua resposta aqui)
 
 **2. Qual a diferença entre o CI (atividade anterior) e o CD (esta)?**
+
 > (escreva sua resposta aqui)
 
 **3. Por que usamos um token e Secrets em vez de escrever o usuário e a senha no arquivo `cd.yml`?**
+
 > (escreva sua resposta aqui)
 
 **4. O que significa a tag `latest` no endereço da imagem?**
+
 > (escreva sua resposta aqui)
