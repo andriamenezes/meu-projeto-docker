@@ -199,3 +199,27 @@ Complexo o passo a passo, senti mais dificuldade com linux do que com o docker, 
 - [x] CI verde
 - [x] PR com CI vermelho documentado
 - [x] Todos os 9 prints no README
+
+## CD — Publicação no Docker Hub
+
+![Token criado no Docker Hub](docs/imagens/10-dockerhub-token.png)
+![Secrets cadastrados no GitHub](docs/imagens/11-github-secrets.png)
+![Workflow de CD verde](docs/imagens/12-cd-verde.png)
+![Imagem publicada no Docker Hub](docs/imagens/13-dockerhub-imagem.png)
+![docker pull da imagem publicada](docs/imagens/14-docker-pull.png)
+
+**Imagem publicada:** `SEU_USUARIO/meu-projeto-docker:latest`
+
+### Perguntas
+
+**1. O que é o Docker Hub, na sua visão?**
+> (escreva sua resposta aqui)
+
+**2. Qual a diferença entre o CI (atividade anterior) e o CD (esta)?**
+> (escreva sua resposta aqui)
+
+**3. Por que usamos um token e Secrets em vez de escrever o usuário e a senha no arquivo `cd.yml`?**
+> (escreva sua resposta aqui)
+
+**4. O que significa a tag `latest` no endereço da imagem?**
+> (escreva sua resposta aqui)
